@@ -1,0 +1,61 @@
+// --- Star Generation Logic ---
+function createStars() {
+    const container = document.getElementById('stars-container');
+    const starCount = 100;
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        const xy = Math.random() * 100;
+        const duration = Math.random() * 3 + 2 + 's'; // Between 2s and 5s
+        const size = Math.random() * 2 + 1 + 'px';
+
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = size;
+        star.style.height = size;
+        star.style.setProperty('--duration', duration);
+        
+        // Random delay so they don't all twinkle at once
+        star.style.animationDelay = Math.random() * 5 + 's';
+
+        container.appendChild(star);
+    }
+}
+
+// --- Form Switching Logic ---
+const loginForm = document.getElementById('login-form');
+const signupForm = document.getElementById('signup-form');
+const forgotForm = document.getElementById('forgot-form');
+const mainContainer = document.getElementById('main-container');
+
+function switchForm(target) {
+    // Reset classes
+    loginForm.classList.remove('active', 'slide-left');
+    signupForm.classList.remove('active', 'slide-left');
+    forgotForm.classList.remove('active', 'slide-left');
+
+    if (target === 'signup') {
+        // Logic: Login slides Left out, Signup comes in
+        loginForm.classList.add('slide-left');
+        setTimeout(() => {
+            signupForm.classList.add('active');
+        }, 100);
+    } else if (target === 'login') {
+        // Logic: Bring Login back
+        setTimeout(() => {
+            loginForm.classList.add('active');
+        }, 100);
+    } else if (target === 'forgot') {
+        // Logic: Login slides Left out, Forgot comes in
+        loginForm.classList.add('slide-left');
+        setTimeout(() => {
+            forgotForm.classList.add('active');
+        }, 100);
+    }
+}
+
+// Initialize Background
+createStars();
