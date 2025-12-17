@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Auth Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stars" id="stars-container"></div>
+    <div class="planet"></div>
+
+    <div class="container" id="main-container">
+        
+        <div class="form-box active" id="login-form">
+            <h2>LOG IN</h2>
+            <form action="#">
+                <div class="input-group">
+                    <input type="email" required>
+                    <label>Email Address</label>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <i class="fas fa-lock"></i>
+                </div>
+                
+                <a href="#" class="forgot-link" onclick="switchForm('forgot')">Forgot Password?</a>
+                
+                <button type="submit" class="btn">Launch</button>
+
+                <div class="social-text">Or login with</div>
+                <div class="social-media">
+                    <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+
+                <div class="bottom-text">
+                    Don't have an account? <a href="#" onclick="switchForm('signup')">Sign Up</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box" id="signup-form">
+            <h2>SIGN UP</h2>
+            <form action="#">
+                <div class="input-group">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <div class="input-group">
+                    <input type="email" required>
+                    <label>Email Address</label>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+                <div class="social-text">Or register with</div>
+                <div class="social-media">
+                    <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+
+                <div class="bottom-text">
+                    Already aboard? <a href="#" onclick="switchForm('login')">Log In</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box" id="forgot-form">
+            <h2>RECOVERY</h2>
+            <p class="recovery-text">
+                Lost in space? Enter your email to reset your coordinates.
+            </p>
+            <form action="#">
+                <div class="input-group">
+                    <input type="email" required>
+                    <label>Email Address</label>
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+
+                <button type="submit" class="btn">Send Link</button>
+
+                <div class="bottom-text">
+                    <a href="#" onclick="switchForm('login')">Back to Login</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="disclaimer">
+        THIS SITE IS ONLY AN EXAMPLE. IT WAS CREATED FOR YOUR INSPIRATION. SOME PARTS MAY NOT WORK.
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
